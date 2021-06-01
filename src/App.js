@@ -1,15 +1,27 @@
-import logo from "./logo.svg"; // import svg icons and images
+import tasks from "./tasks";
 import "./App.css";
 
 function App() {
+  const newArray = tasks.map((task) => (
+    <tr>
+      <td>{task.status}</td>
+      <td>{task.name}</td>
+      <td className={task.priority}>{task.priority.toUpperCase()}</td>
+    </tr>
+  ));
   return (
     <div className="rectangle">
       <p className="title">TO DO LIST</p>
-      <img
-        className="pecan"
-        src="https://www.theseasonedmom.com/wp-content/uploads/2020/08/Easy-Pecan-Pie-Recipe-1.jpg"
-      />
-      <table></table>
+      <table>
+        <thead>
+          <tr>
+            <th>STATUS</th>
+            <th>TASK</th>
+            <th>PRIORITY</th>
+          </tr>
+        </thead>
+        <tbody>{newArray}</tbody>
+      </table>
     </div>
   );
 }
