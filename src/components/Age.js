@@ -1,5 +1,5 @@
-const Age = () => {
-  return <h3>I'm 400 years old</h3>;
+const Age = (props) => {
+  return <h3>I'm {props.age} years old</h3>;
 };
 
 export default Age;

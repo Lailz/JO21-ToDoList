@@ -1,13 +1,17 @@
+// Components
+import TaskRow from "./TaskRow";
+
+// Data
 import tasks from "../tasks";
 
 const TaskTable = () => {
-  const newArray = tasks.map((task) => (
-    <tr>
-      <td>{task.status}</td>
-      <td>{task.name}</td>
-      <td className={task.priority}>{task.priority.toUpperCase()}</td>
-    </tr>
+  const kashkhaArray = tasks.map((task) => (
+    <TaskRow task={task} key={task.id} />
   ));
+  console.log(
+    "🚀 ~ file: TaskTable.js ~ line 9 ~ TaskTable ~ kashkhaArray",
+    kashkhaArray
+  );
   return (
     <table>
       <thead>
@@ -17,7 +21,7 @@ const TaskTable = () => {
           <th>PRIORITY</th>
         </tr>
       </thead>
-      <tbody>{newArray}</tbody>
+      <tbody>{kashkhaArray}</tbody>
     </table>
   );
 };
