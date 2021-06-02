@@ -1,15 +1,21 @@
+import { ThemeProvider } from "styled-components";
+
 // Components
 import TaskTable from "./components/TaskTable";
 
 // Styling
-import "./App.css";
+// import "./App.css";
+import { GlobalStyle, Rectangle, theme, Title } from "./styles";
 
 function App() {
   return (
-    <div className="rectangle">
-      <p className="title">TO DO LIST</p>
-      <TaskTable />
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Rectangle>
+        <Title>TO DO LIST</Title>
+        <TaskTable />
+      </Rectangle>
+    </ThemeProvider>
   );
 }
 

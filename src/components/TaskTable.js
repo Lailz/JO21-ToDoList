@@ -8,10 +8,6 @@ const TaskTable = () => {
   const kashkhaArray = tasks.map((task) => (
     <TaskRow task={task} key={task.id} />
   ));
-  console.log(
-    "🚀 ~ file: TaskTable.js ~ line 9 ~ TaskTable ~ kashkhaArray",
-    kashkhaArray
-  );
   return (
     <table>
       <thead>
