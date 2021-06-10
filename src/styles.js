@@ -55,7 +55,7 @@ export const theme = {
 };
 
 export const Title = styled.h1`
-  color: ${(props) => props.theme.mainColor};
+  color: ${(props) => props.color};
   font-family: menlo;
   background-color: ${(props) => props.theme.backgroundColor};
   height: 80px;
@@ -64,6 +64,7 @@ export const Title = styled.h1`
   padding-top: 40px;
   font-size: 40px;
   margin-bottom: 10px;
+  font-weight: ${(props) => props.fontWeight};
 `;
 
 // export { Rectangle, Title };

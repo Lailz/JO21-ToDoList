@@ -1,20 +1,13 @@
+import { useSelector } from "react-redux";
+
 // Components
 import TaskRow from "./TaskRow";
 
-// Data
-import _tasks from "../tasks";
-import { useState } from "react";
-
 const TaskTable = () => {
-  const [tasks, setTasks] = useState(_tasks);
-
-  const deleteTask = (taskId) => {
-    const filteredTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(filteredTasks);
-  };
+  const tasks = useSelector((state) => state.tasks);
 
   const kashkhaArray = tasks.map((task) => (
-    <TaskRow deleteTask={deleteTask} task={task} key={task.id} />
+    <TaskRow task={task} key={task.id} />
   ));
   return (
     <table>

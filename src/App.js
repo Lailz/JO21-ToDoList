@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
 // Components
@@ -8,6 +9,7 @@ import TaskTable from "./components/TaskTable";
 import { GlobalStyle, Rectangle, theme, Title } from "./styles";
 
 function App() {
+  const [counter, setCounter] = useState(0);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
