@@ -1,8 +1,7 @@
-import tasksData from "../tasks";
-import { DELETE_TASK } from "./actions";
+import { DELETE_TASK, FETCH_TASKS } from "./actions";
 
 const initialState = {
-  tasks: tasksData,
+  tasks: [],
   counter: 0,
 };
 
@@ -16,8 +15,11 @@ const reducer = (state = initialState, action) => {
         ...state, // give me the last version of tasks and counter
         tasks: tasksToKeep,
       };
-    case "CREATE_TASK":
-      return state;
+    case FETCH_TASKS:
+      return {
+        ...state,
+        tasks: action.payload,
+      };
     default:
       return state;
   }
