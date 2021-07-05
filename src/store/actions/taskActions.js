@@ -1,16 +1,13 @@
-import axios from "axios";
-
-// Action Types
-export const DELETE_TASK = "DELETE_TASK";
-export const FETCH_TASKS = "FETCH_TASKS";
+import instance from "./instance";
+import * as actionTypes from "./types";
 
 // Actions
 export const deleteTask = (taskId) => {
   return async (dispatch) => {
     try {
-      await axios.delete(`http://localhost:8080/katakeet/${taskId}`);
+      await instance.delete(`/katakeet/${taskId}`);
       dispatch({
-        type: DELETE_TASK,
+        type: actionTypes.DELETE_TASK,
         payload: {
           taskId: taskId,
         },
@@ -24,10 +21,10 @@ export const deleteTask = (taskId) => {
 export const fetchTasks = () => {
   return async (dispatch) => {
     try {
-      const res = await axios.get("http://localhost:8080/katakeet");
+      const res = await instance.get("/katakeet");
       console.log(res.data);
       dispatch({
-        type: FETCH_TASKS,
+        type: actionTypes.FETCH_TASKS,
         payload: res.data,
       });
     } catch (error) {

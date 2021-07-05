@@ -18,6 +18,35 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
+export const AddBookDiv = styled.div`
+  background: ${(props) => props.theme.mainColor};
+  border-radius: 15px;
+  padding: 30px;
+  margin: auto;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  align-items: center;
+
+  input {
+    height: 40px;
+    width: 300px;
+    border-radius: 4px;
+    border: 2px solid white;
+  }
+`;
+
+export const Button = styled.button`
+  height: 40px;
+  width: 150px;
+  border-radius: 4px;
+  border: none;
+  color: white;
+  background: ${(props) => props.theme.darkGreen};
+`;
+
 export const Rectangle = styled.div`
   position: relative;
   width: 370px;
