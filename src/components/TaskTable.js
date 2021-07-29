@@ -16,7 +16,7 @@ const TaskTable = ({ user }) => {
           <th>STATUS</th>
           <th>TASK</th>
           <th>PRIORITY</th>
-          {user && <th>DELETE</th>}
+          <th>DELETE</th>
         </tr>
       </thead>
       <tbody>{kashkhaArray}</tbody>

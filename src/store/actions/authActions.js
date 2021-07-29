@@ -12,6 +12,7 @@ export const signup = (userData) => {
     }
   };
 };
+
 export const signin = (userData) => {
   return async (dispatch) => {
     try {
@@ -33,24 +34,22 @@ export const checkForToken = () => {
     // Check if token is expired
     const currentTime = Date.now();
     const user = decode(token);
-    if (user.exp > currentTime) {
-      // if the token is not expired
-      return setUser(token);
-    } else {
-      return setUser();
-    }
+    if (user.exp > currentTime) return setUser(token);
   }
+  return setUser();
 };
 
 const setUser = (token) => {
   if (token) {
     localStorage.setItem("myToken", token);
+    instance.defaults.headers.common.Authorization = `Bearer ${token}`;
     return {
       type: actionTypes.SET_USER,
       payload: decode(token),
     };
   } else {
     localStorage.removeItem("myToken");
+    delete instance.defaults.headers.common.Authorization;
     return {
       type: actionTypes.SET_USER,
       payload: null,

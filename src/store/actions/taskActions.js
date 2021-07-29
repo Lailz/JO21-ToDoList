@@ -13,7 +13,11 @@ export const deleteTask = (taskId) => {
         },
       });
     } catch (error) {
-      console.log(error);
+      if (error.message.includes("401"))
+        dispatch({
+          type: actionTypes.SET_USER,
+          payload: null,
+        });
     }
   };
 };
