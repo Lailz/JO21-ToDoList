@@ -1,14 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { ThemeProvider } from "styled-components";
-// import Signin from "./components/Signin";
 
 // Components
-// import TaskTable from "./components/TaskTable";
 import { signout } from "./store/actions/authActions";
-// import { fetchTasks } from "./store/actions/taskActions";
 
 // Styling
-// import "./App.css";
 import { GlobalStyle, theme } from "./styles";
 
 function App() {
